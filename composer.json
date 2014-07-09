@@ -1,6 +1,6 @@
 {
     "name" : "stocarul/twitter-bundle",
-    "description" : "A demo bundle",
+    "description" : "A twitter sdk bundle",
     "type" : "symfony-bundle",
 
     "authors" : [{
@@ -19,6 +19,7 @@
     "require" : {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "~2.2"
+        "guzzlehttp/guzzle": "~4.0"
     },
 
     "autoload" : {
