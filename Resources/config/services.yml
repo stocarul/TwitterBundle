@@ -1,0 +1,7 @@
+parameters:
+#    stocarul_twitter.example.class: Stocarul\TwitterBundle\Example
+
+services:
+#    stocarul_twitter.example:
+#        class: %stocarul_twitter.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,31 @@
+{
+    "name" : "stocarul/twitter-bundle",
+    "description" : "A demo bundle",
+    "type" : "symfony-bundle",
+
+    "authors" : [{
+        "name" : "Cosmin-Mihai Tutunaru",
+        "email" : "cosmin@tutunaru.ro"
+    }],
+
+    "keywords" : [
+        "twitter sdk"
+    ],
+
+    "license" : [
+        "MIT"
+    ],
+
+    "require" : {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.2"
+    },
+
+    "autoload" : {
+        "psr-0" : {
+            "Stocarul\\TwitterBundle" : ""
+        }
+    },
+
+    "target-dir" : "Stocarul/TwitterBundle"
+}
