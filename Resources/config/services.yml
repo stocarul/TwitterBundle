@@ -1,7 +1,23 @@
 parameters:
-#    stocarul_twitter.example.class: Stocarul\TwitterBundle\Example
+    stocarul_twitter.http.client.class: Stocarul\TwitterBundle\Http\Client
+    stocarul_twitter.guzzle.oauth1.class: GuzzleHttp\Subscriber\Oauth\Oauth1
+
+    stocarul_twitter.search.class: Stocarul\TwitterBundle\Service\Search
 
 services:
-#    stocarul_twitter.example:
-#        class: %stocarul_twitter.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    stocarul_twitter.oauth:
+        class: %stocarul_twitter.guzzle.oauth1.class%
+        arguments:
+            - %twitter.config%
+
+    stocarul_twitter.client:
+        class: %stocarul_twitter.http.client.class%
+        arguments:
+            - %twitter.client%
+        calls:
+            - [addSubscriber, [@stocarul_twitter.oauth]]
+
+    stocarul_twitter.search:
+        class: %stocarul_twitter.search.class%
+        arguments:
+            - @stocarul_twitter.client
