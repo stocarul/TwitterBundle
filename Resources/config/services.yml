@@ -8,12 +8,12 @@ services:
     stocarul_twitter.oauth:
         class: %stocarul_twitter.guzzle.oauth1.class%
         arguments:
-            - %twitter.config%
+            - %stocarul_twitter.oauth%
 
     stocarul_twitter.client:
         class: %stocarul_twitter.http.client.class%
         arguments:
-            - %twitter.client%
+            - %stocarul_twitter.client%
         calls:
             - [addSubscriber, [@stocarul_twitter.oauth]]
 

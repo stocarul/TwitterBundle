@@ -20,6 +20,32 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('stocarul_twitter');
 
+        $rootNode
+            ->children()
+                ->arrayNode('oauth')
+                    ->isRequired()
+                    ->children()
+                        ->scalarNode('consumer_key')->isRequired()->end()
+                        ->scalarNode('consumer_secret')->isRequired()->end()
+                        ->scalarNode('token')->end()
+                        ->scalarNode('token_secret')->end()
+                    ->end()
+                ->end()
+                ->arrayNode('client')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('base_url')->defaultValue('https://api.twitter.com/1.1/"')->end()
+                        ->arrayNode('defaults')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('auth')->defaultValue('oauth')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.

@@ -22,6 +22,9 @@ class StocarulTwitterExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->setParameter('stocarul_twitter.oauth', $config['oauth']);
+        $container->setParameter('stocarul_twitter.client', $config['client']);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
