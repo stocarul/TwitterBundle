@@ -4,6 +4,8 @@ parameters:
 
     stocarul_twitter.search.class: Stocarul\TwitterBundle\Service\Search
 
+    stocarul_twitter.factory.tweet.class: Stocarul\TwitterBundle\Factory\TweetFactory
+
 services:
     stocarul_twitter.oauth:
         class: %stocarul_twitter.guzzle.oauth1.class%
@@ -21,3 +23,8 @@ services:
         class: %stocarul_twitter.search.class%
         arguments:
             - @stocarul_twitter.client
+        calls:
+            - [setTweetFactory, [@stocarul_twitter.factory.tweet]]
+
+    stocarul_twitter.factory.tweet:
+        class: %stocarul_twitter.factory.tweet.class%
