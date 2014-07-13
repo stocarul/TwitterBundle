@@ -23,8 +23,7 @@ services:
         class: %stocarul_twitter.search.class%
         arguments:
             - @stocarul_twitter.client
-        calls:
-            - [setTweetFactory, [@stocarul_twitter.factory.tweet]]
+            - @stocarul_twitter.factory.tweet
 
     stocarul_twitter.factory.tweet:
         class: %stocarul_twitter.factory.tweet.class%

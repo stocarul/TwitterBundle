@@ -15,23 +15,9 @@ interface SearchInterface
      * Search constructor
      *
      * @param ClientInterface $client
+     * @param TweetFactory    $tweetFactory
      */
-    public function __construct(ClientInterface $client);
-
-    /**
-     * Get tweetFactory
-     *
-     * @return TweetFactory
-     */
-    public function getTweetFactory();
-
-    /**
-     * Set tweetFactory
-     *
-     * @param  TweetFactory    $tweetFactory
-     * @return SearchInterface
-     */
-    public function setTweetFactory(TweetFactory $tweetFactory);
+    public function __construct(ClientInterface $client, TweetFactory $tweetFactory);
 
     /**
      * Returns a collection of relevant Tweets matching a specified query.

@@ -30,33 +30,12 @@ class Search implements SearchInterface
      * Search constructor
      *
      * @param ClientInterface $client
+     * @param TweetFactory    $tweetFactory
      */
-    public function __construct(ClientInterface $client)
+    public function __construct(ClientInterface $client, TweetFactory $tweetFactory)
     {
         $this->client = $client;
-    }
-
-    /**
-     * Get tweetFactory
-     *
-     * @return TweetFactory
-     */
-    public function getTweetFactory()
-    {
-        return $this->tweetFactory;
-    }
-
-    /**
-     * Set tweetFactory
-     *
-     * @param  TweetFactory $tweetFactory
-     * @return Search
-     */
-    public function setTweetFactory(TweetFactory $tweetFactory)
-    {
         $this->tweetFactory = $tweetFactory;
-
-        return $this;
     }
 
     /**
@@ -76,6 +55,6 @@ class Search implements SearchInterface
 
         $response = json_decode($response->getBody());
 
-        return $this->getTweetFactory()->constructArray($response->statuses);
+        return $this->tweetFactory->constructArray($response->statuses);
     }
 }
