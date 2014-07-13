@@ -2,6 +2,8 @@
 
 namespace Stocarul\TwitterBundle\Model;
 
+use JMS\Serializer\Annotation AS JMS;
+
 /**
  * Class: Tweet
  *
@@ -12,6 +14,8 @@ class Tweet
      * UTC time when this Tweet was created.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $createdAt;
 
@@ -20,6 +24,8 @@ class Tweet
      * by Twitter users.
      *
      * @var integer
+     *
+     * @JMS\Type("integer")
      */
     protected $favoriteCount;
 
@@ -29,6 +35,8 @@ class Tweet
      * on none, low, and medium streams.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $filterLevel;
 
@@ -40,6 +48,8 @@ class Tweet
      * identifier to stay on the safe side.
      *
      * @var integer
+     *
+     * @JMS\Type("integer")
      */
     protected $id;
 
@@ -48,6 +58,8 @@ class Tweet
      * Implementations should use this rather than the large integer in id.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $idStr;
 
@@ -56,6 +68,8 @@ class Tweet
      * screen name of the original Tweet's author.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $inReplyToScreenName;
 
@@ -64,6 +78,8 @@ class Tweet
      * representation of the original Tweet's ID.
      *
      * @var integer
+     *
+     * @JMS\Type("integer")
      */
     protected $inReplyToStatusId;
 
@@ -72,6 +88,8 @@ class Tweet
      * representation of the original Tweet's ID.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $inReplyToStatusIdStr;
 
@@ -81,6 +99,8 @@ class Tweet
      * necessarily always be the user directly mentioned in the Tweet.
      *
      * @var integer
+     *
+     * @JMS\Type("integer")
      */
     protected $inReplyToUserId;
 
@@ -89,7 +109,9 @@ class Tweet
      * representation of the original Tweet's author ID. This will not
      * necessarily always be the user directly mentioned in the Tweet.
      *
-     * @var mixed
+     * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $inReplyToUserIdStr;
 
@@ -99,6 +121,8 @@ class Tweet
      * language could be detected.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $lang;
 
@@ -109,6 +133,8 @@ class Tweet
      * content or media identified as sensitive content.
      *
      * @var boolean
+     *
+     * @JMS\Type("boolean")
      */
     protected $possiblySensitive;
 
@@ -116,6 +142,8 @@ class Tweet
      * Number of times this Tweet has been retweeted.
      *
      * @var integer
+     *
+     * @JMS\Type("integer")
      */
     protected $retweetCount;
 
@@ -124,6 +152,8 @@ class Tweet
      * authenticating user.
      *
      * @var boolean
+     *
+     * @JMS\Type("boolean")
      */
     protected $retweeted;
 
@@ -137,6 +167,8 @@ class Tweet
      * retweet they created by deleting their retweet.)
      *
      * @var Tweet
+     *
+     * @JMS\Type("Stocarul\TwitterBundle\Model\Tweet")
      */
     protected $retweetedStatus;
 
@@ -145,6 +177,8 @@ class Tweet
      * from the Twitter website have a source value of web.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $source;
 
@@ -153,6 +187,8 @@ class Tweet
      * details on what is currently considered valid characters.
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $text;
 
@@ -161,6 +197,8 @@ class Tweet
      * content has been withheld due to a DMCA complaint.
      *
      * @var boolean
+     *
+     * @JMS\Type("boolean")
      */
     protected $withheldCopyright;
 
@@ -169,6 +207,8 @@ class Tweet
      * "status" or a "user."
      *
      * @var string
+     *
+     * @JMS\Type("string")
      */
     protected $withheldScope;
 

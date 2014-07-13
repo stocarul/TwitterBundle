@@ -28,3 +28,5 @@ services:
 
     stocarul_twitter.factory.tweet:
         class: %stocarul_twitter.factory.tweet.class%
+        arguments:
+            - @jms_serializer
