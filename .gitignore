@@ -1,3 +1,9 @@
+bin
+vendor
+
+composer.phar
+composer.lock
+
 *.swo
 *.swp
 *_
