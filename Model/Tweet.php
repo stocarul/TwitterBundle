@@ -20,6 +20,15 @@ class Tweet
     protected $createdAt;
 
     /**
+     * Entities which have been parsed out of the text of the Tweet.
+     *
+     * @var \Stocarul\TwitterBundle\Model\Entity
+     *
+     * @JMS\Type("Stocarul\TwitterBundle\Model\Entity")
+     */
+    protected $entities;
+
+    /**
      * Indicates approximately how many times this Tweet has been "favorited"
      * by Twitter users.
      *
@@ -231,6 +240,29 @@ class Tweet
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get entities
+     *
+     * @return \Stocarul\TwitterBundle\Model\Entity
+     */
+    public function getEntities()
+    {
+        return $this->entities;
+    }
+
+    /**
+     * Set entities
+     *
+     * @param  \Stocarul\TwitterBundle\Model\Entity $entities
+     * @return Tweet
+     */
+    public function setEntities(\Stocarul\TwitterBundle\Model\Entity $entities)
+    {
+        $this->entities = $entities;
 
         return $this;
     }
