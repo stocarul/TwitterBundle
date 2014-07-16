@@ -35,6 +35,15 @@ class Entity
     protected $urls;
 
     /**
+     * Represents other Twitter users mentioned in the text of the Tweet.
+     *
+     * @var \Stocarul\TwitterBundle\Model\UserMention[]
+     *
+     * @JMS\Type("array<Stocarul\TwitterBundle\Model\UserMention>")
+     */
+    protected $userMentions;
+
+    /**
      * Get hashtags
      *
      * @return \Stocarul\TwitterBundle\Model\Hashtag[]
@@ -99,6 +108,29 @@ class Entity
     public function setUrls($urls)
     {
         $this->urls = $urls;
+
+        return $this;
+    }
+
+    /**
+     * Get userMentions
+     *
+     * @return \Stocarul\TwitterBundle\Model\UserMention[]
+     */
+    public function getUserMentions()
+    {
+        return $this->userMentions;
+    }
+
+    /**
+     * Set userMentions
+     *
+     * @param  \Stocarul\TwitterBundle\Model\UserMention[] $userMentions
+     * @return Entity
+     */
+    public function setUserMentions($userMentions)
+    {
+        $this->userMentions = $userMentions;
 
         return $this;
     }
