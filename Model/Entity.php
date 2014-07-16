@@ -18,11 +18,21 @@ class Entity
     /**
      * Represents media elements uploaded with the Tweet.
      *
-     * @var \Stocarul\TwitterBundle\Model\Media
+     * @var \Stocarul\TwitterBundle\Model\Media[]
      *
      * @JMS\Type("array<Stocarul\TwitterBundle\Model\Media>")
      */
     protected $media;
+
+    /**
+     * Represents URLs included in the text of a Tweet or within
+     * textual fields of a user object.
+     *
+     * @var \Stocarul\TwitterBundle\Model\Url[]
+     *
+     * @JMS\Type("array<Stocarul\TwitterBundle\Model\Url>")
+     */
+    protected $urls;
 
     /**
      * Get hashtags
@@ -60,12 +70,35 @@ class Entity
     /**
      * Set media
      *
-     * @param  \Stocarul\TwitterBundle\Model\Media $media
+     * @param  \Stocarul\TwitterBundle\Model\Media[] $media
      * @return Entity
      */
-    public function setMedia(\Stocarul\TwitterBundle\Model\Media $media)
+    public function setMedia($media)
     {
         $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get urls
+     *
+     * @return \Stocarul\TwitterBundle\Model\Url[]
+     */
+    public function getUrls()
+    {
+        return $this->urls;
+    }
+
+    /**
+     * Set urls
+     *
+     * @param  \Stocarul\TwitterBundle\Model\Url[] $urls
+     * @return Entity
+     */
+    public function setUrls($urls)
+    {
+        $this->urls = $urls;
 
         return $this;
     }
