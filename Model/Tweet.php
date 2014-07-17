@@ -213,6 +213,16 @@ class Tweet
     protected $text;
 
     /**
+     * The user who posted this Tweet.
+     * Perspectival attributes embedded within this object are unreliable.
+     *
+     * @var \Stocarul\TwitterBundle\Model\User
+     *
+     * @JMS\Type("Stocarul\TwitterBundle\Model\User")
+     */
+    protected $user;
+
+    /**
      * When present and set to "true", it indicates that this piece of
      * content has been withheld due to a DMCA complaint.
      *
@@ -665,6 +675,29 @@ class Tweet
     public function setText($text)
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Stocarul\TwitterBundle\Model\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param  \Stocarul\TwitterBundle\Model\User $user
+     * @return Tweet
+     */
+    public function setUser(\Stocarul\TwitterBundle\Model\User $user)
+    {
+        $this->user = $user;
 
         return $this;
     }
