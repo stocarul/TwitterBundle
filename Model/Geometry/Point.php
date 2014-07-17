@@ -4,6 +4,10 @@ namespace Stocarul\TwitterBundle\Model\Geometry;
 
 use JMS\Serializer\Annotation AS JMS;
 
+/**
+ * Class: Point
+ *
+ */
 class Point
 {
     /**

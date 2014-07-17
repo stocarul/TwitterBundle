@@ -4,6 +4,10 @@ namespace Stocarul\TwitterBundle\Model;
 
 use JMS\Serializer\Annotation AS JMS;
 
+/**
+ * Class: UserMention
+ *
+ */
 class UserMention
 {
     /**
