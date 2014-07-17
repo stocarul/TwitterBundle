@@ -6,6 +6,8 @@ parameters:
 
     stocarul_twitter.factory.tweet.class: Stocarul\TwitterBundle\Factory\TweetFactory
 
+    stocarul_twitter.listener.handler.point.class: Stocarul\TwitterBundle\EventListener\Handler\PointHandler
+
 services:
     stocarul_twitter.oauth:
         class: %stocarul_twitter.guzzle.oauth1.class%
@@ -29,3 +31,10 @@ services:
         class: %stocarul_twitter.factory.tweet.class%
         arguments:
             - @jms_serializer
+
+    stocarul_twitter.listener.handler.point:
+        class: %stocarul_twitter.listener.handler.point.class%
+        tags:
+            - name: jms_serializer.handler
+              type: Stocarul\TwitterBundle\Model\Geometry\Point
+              format: json

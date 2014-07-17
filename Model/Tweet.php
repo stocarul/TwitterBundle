@@ -11,6 +11,17 @@ use JMS\Serializer\Annotation AS JMS;
 class Tweet
 {
     /**
+     * Represents the geographic location of this Tweet as reported by
+     * the user or client application. The inner coordinates array is
+     * formatted as geoJSON (longitude first, then latitude).
+     *
+     * @var \Stocarul\TwitterBundle\Model\Geometry\Point
+     *
+     * @JMS\Type("Stocarul\TwitterBundle\Model\Geometry\Point")
+     */
+    protected $coordinates;
+
+    /**
      * UTC time when this Tweet was created.
      *
      * @var string
@@ -220,6 +231,29 @@ class Tweet
      * @JMS\Type("string")
      */
     protected $withheldScope;
+
+    /**
+     * Get coordinates
+     *
+     * @return \Stocarul\TwitterBundle\Model\Geometry\Point
+     */
+    public function getCoordinates()
+    {
+        return $this->coordinates;
+    }
+
+    /**
+     * Set coordinates
+     *
+     * @param  \Stocarul\TwitterBundle\Model\Geometry\Point $coordinates
+     * @return Tweet
+     */
+    public function setCoordinates(\Stocarul\TwitterBundle\Model\Geometry\Point $coordinates)
+    {
+        $this->coordinates = $coordinates;
+
+        return $this;
+    }
 
     /**
      * Get createdAt
