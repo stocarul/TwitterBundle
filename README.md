@@ -28,7 +28,7 @@ public function registerBundles()
 }
 ```
 
-#### c) Configure the bundle
+#### C) Configure the bundle
 
 ```yaml
 // app/config/config.yml
@@ -41,6 +41,20 @@ stocarul_twitter:
         
         # Access token (optional)
         # Can be used to make API requests on your own account's behalf
-        token: your_twitter_consumer_key
-        token_secret: your_twitter_consumer_secret
+        token: your_twitter_token_key
+        token_secret: your_twitter_token_secret
 ```
+
+## Contributing
+
+#### A) Fork and clone the repository
+
+#### B) Instal dependencies
+
+```bash
+composer install
+```
+
+#### C) Tests configuration
+
+Create a test app on Twitter Developers, then create `Tests/Fixtures/App/config/parameters.yml` from `Tests/Fixtures/App/config/parameters.yml.dist` and edit it to add your credentials. To check if everything works just execute the phpunit command in the root directory.
