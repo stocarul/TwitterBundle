@@ -17,7 +17,7 @@
     ],
 
     "require" : {
-        "php": ">=5.3.3",
+        "php": ">=5.4.0",
         "guzzlehttp/guzzle": "~4.0",
         "guzzlehttp/oauth-subscriber": "0.1.x",
         "sensio/framework-extra-bundle": "~3.0",
