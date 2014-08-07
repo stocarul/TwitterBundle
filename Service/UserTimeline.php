@@ -40,10 +40,10 @@ class UserTimeline implements UserTimelineInterface
     public function getStatuses($params = array())
     {
         $response = $this->client->get('statuses/user_timeline.json', array(
-            'query' => $params,
+            'query' => $params
         ));
 
-        $response = json_decode($response->getBody());
+        $response = json_decode($response->getBody(), true);
 
         return $this->tweetFactory->constructArray($response);
     }
