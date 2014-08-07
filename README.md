@@ -1,6 +1,8 @@
 TwitterBundle
 =============
 
+[![Build Status](https://api.shippable.com/projects/53e31b13b405175800821401/badge/master)](https://www.shippable.com/projects/53e31b13b405175800821401/builds/16)
+
 ## Installation
 
 #### A) Add StocarulTwitterBundle to your composer.json
