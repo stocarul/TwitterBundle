@@ -1,0 +1,26 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+env:
+    global:
+        # consumer_key
+        - secure: Phn62WV29YFvF4zsd4BvMpLKVv07CllWGBU7gfijcXLI01KL6IQstHqhTMlmxn4WAGfnhZicW2fi/DEAdBQpMkPRGBzGAodUCbmbWXni0gQ3z9VmWdjXlCuKmcykMu6MGcnCrrO4cW4wX/c0L3KOJrV6CZjUqjE7nQaz1tmpe79jtEWZyE9t2R4HdCXAR8m3bk0iKBGHuSUCKY7iQjIH1mjBlE1Ob4W5XRVbW0YCrNVGysfJ0t3JwSmWQzSP6xbtW+71gNF4z3cOMnUZsqU2H2ZkTfYUznewk5k6DZ8tHG+jWNlZHBSXjpNuNHbzgtKsmkXLKHDGI7O2Rt5CUqrmxg==
+        # consumer_secret
+        - secure: uP9i35XZPmIYCEd4jbBUgWjuDNPsS5+9Q89jLXE/Hb6BgGwMdc3nEOJCe3ckKPPxRCLzLxY/wpc+xqF/dd+2jYQachKokCUNOGQVjI/2/4VibnoTLs+zB2Fbdbreh0kLOBuVeRPtbOdCcqIeEUdXrpHg4HiFD29ye7U8pzL7qvnNQflIJJFbm83w8dhYPvN6wWdjO1BABtTx9SZ7TMPzDgyTwmpKjyV4RSKvI+tZ+wG/INUWSLQQe4wXqTy7tCoHfWlIBivhF/gypz8V9zGIxXYtAAh/Btanf/M3G5vH67q2NatdgEN/bom96mqcr4PtPDzzhkYJ3cB6Dkq2JwMDKA==
+
+before_script:
+  - mkdir -p shippable/codecoverage
+  - mkdir -p shippable/testresults
+  - composer self-update
+  - composer update --prefer-source
+  - cp Tests/Fixtures/App/config/parameters.yml.dist Tests/Fixtures/App/config/parameters.yml
+
+script:
+ - phpunit --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
+
+notifications:
+  email: false
