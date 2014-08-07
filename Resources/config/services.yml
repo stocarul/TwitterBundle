@@ -4,6 +4,8 @@ parameters:
 
     stocarul_twitter.search.class: Stocarul\TwitterBundle\Service\Search
 
+    stocarul_twitter.user_timeline.class: Stocarul\TwitterBundle\Service\UserTimeline
+
     stocarul_twitter.factory.tweet.class: Stocarul\TwitterBundle\Factory\TweetFactory
 
     stocarul_twitter.listener.handler.point.class: Stocarul\TwitterBundle\EventListener\Handler\PointHandler
@@ -23,6 +25,12 @@ services:
 
     stocarul_twitter.search:
         class: %stocarul_twitter.search.class%
+        arguments:
+            - @stocarul_twitter.client
+            - @stocarul_twitter.factory.tweet
+
+    stocarul_twitter.user_timeline:
+        class: %stocarul_twitter.user_timeline.class%
         arguments:
             - @stocarul_twitter.client
             - @stocarul_twitter.factory.tweet
