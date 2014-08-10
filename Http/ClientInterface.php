@@ -18,4 +18,11 @@ interface ClientInterface extends Base
      * @param SubscriberInterface $subscriber
      */
     public function addSubscriber(SubscriberInterface $subscriber);
+
+    /**
+     * Detach a subscriber
+     *
+     * @param SubscriberInterface $subscriber
+     */
+    public function removeSubscriber(SubscriberInterface $subscriber);
 }

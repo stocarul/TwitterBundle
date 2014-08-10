@@ -27,4 +27,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($response, $client->get());
     }
+
+    /**
+     * testRemoveSubscriber
+     *
+     * @expectedException \GuzzleHttp\Exception\RequestException
+     */
+    public function testRemoveSubscriber()
+    {
+        $client = new Client();
+        $response = new Response(200);
+
+        $subscriber = new Mock(array($response));
+        $client->addSubscriber($subscriber);
+        $client->removeSubscriber($subscriber);
+
+        $this->assertEquals($response, $client->get());
+    }
 }

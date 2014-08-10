@@ -22,4 +22,14 @@ class Client extends Base implements ClientInterface
     {
         $this->getEmitter()->attach($subscriber);
     }
+
+    /**
+     * Detach a subscriber
+     *
+     * @param SubscriberInterface $subscriber
+     */
+    public function removeSubscriber(SubscriberInterface $subscriber)
+    {
+        $this->getEmitter()->detach($subscriber);
+    }
 }
