@@ -4,7 +4,7 @@ namespace Stocarul\TwitterBundle\Http;
 
 use GuzzleHttp\Client AS Base;
 use GuzzleHttp\Event\SubscriberInterface;
-use GuzzleHttp\Subscriber\Oauth\Oauth1;
+use Stocarul\TwitterBundle\Subscriber\Oauth\Oauth1;
 
 /**
  * Class: Client

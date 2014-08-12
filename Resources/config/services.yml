@@ -1,9 +1,8 @@
 parameters:
     stocarul_twitter.http.client.class: Stocarul\TwitterBundle\Http\Client
-    stocarul_twitter.guzzle.oauth1.class: GuzzleHttp\Subscriber\Oauth\Oauth1
+    stocarul_twitter.subscriber.oauth1.class: Stocarul\TwitterBundle\Subscriber\Oauth\Oauth1
 
     stocarul_twitter.search.class: Stocarul\TwitterBundle\Service\Search
-
     stocarul_twitter.user_timeline.class: Stocarul\TwitterBundle\Service\UserTimeline
 
     stocarul_twitter.factory.tweet.class: Stocarul\TwitterBundle\Factory\TweetFactory
@@ -12,7 +11,7 @@ parameters:
 
 services:
     stocarul_twitter.oauth:
-        class: %stocarul_twitter.guzzle.oauth1.class%
+        class: %stocarul_twitter.subscriber.oauth1.class%
         arguments:
             - %stocarul_twitter.oauth%
 

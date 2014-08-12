@@ -67,7 +67,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     protected function getOauthSubscriber()
     {
         $oauth = $this
-            ->getMockBuilder('\GuzzleHttp\Subscriber\Oauth\Oauth1')
+            ->getMockBuilder('\Stocarul\TwitterBundle\Subscriber\Oauth\Oauth1')
             ->setMethods(array('getEvents'))
             ->disableOriginalConstructor()
             ->getMock();
