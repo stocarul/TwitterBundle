@@ -21,7 +21,7 @@ services:
         arguments:
             - %stocarul_twitter.client%
         calls:
-            - [addSubscriber, [@stocarul_twitter.oauth]]
+            - [setOauthSubscriber, [@stocarul_twitter.oauth]]
 
     stocarul_twitter.search:
         class: %stocarul_twitter.search.class%

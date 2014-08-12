@@ -44,4 +44,39 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($response, $client->get());
     }
+
+    /**
+     * testSetOauthSubscriber
+     *
+     */
+    public function testSetOauthSubscriber()
+    {
+        $client = new Client();
+        $oauth = $this->getOauthSubscriber();
+
+        $client->setOauthSubscriber($oauth);
+
+        $this->assertEquals($oauth, $client->getOauthSubscriber());
+    }
+
+    /**
+     * getOauthSubscriber
+     *
+     * @return \GuzzleHttp\Subscriber\Oauth\Oauth1
+     */
+    protected function getOauthSubscriber()
+    {
+        $oauth = $this
+            ->getMockBuilder('\GuzzleHttp\Subscriber\Oauth\Oauth1')
+            ->setMethods(array('getEvents'))
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $oauth
+            ->expects($this->once())
+            ->method('getEvents')
+            ->will($this->returnValue(array()));
+
+        return $oauth;
+    }
 }
