@@ -2,6 +2,7 @@ TwitterBundle
 =============
 
 [![Build Status](https://api.shippable.com/projects/53e31b13b405175800821401/badge/master)](https://www.shippable.com/projects/53e31b13b405175800821401/builds/16)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/995faa5d-027d-409c-a11f-595e285baa12/mini.png)](https://insight.sensiolabs.com/projects/995faa5d-027d-409c-a11f-595e285baa12)
 
 ## Installation
 
