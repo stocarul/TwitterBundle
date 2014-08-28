@@ -41,11 +41,6 @@ stocarul_twitter:
         # Application key (mandatory)
         consumer_key: your_twitter_consumer_key
         consumer_secret: your_twitter_consumer_secret
-
-        # Access token (optional)
-        # Can be used to make API requests on your own account's behalf
-        token: your_twitter_token_key
-        token_secret: your_twitter_token_secret
 ```
 
 ## Contributing
